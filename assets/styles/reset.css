@@ -1,0 +1,16 @@
+@charset "utf-8";
+/*
+ * reset css
+ */
+html { height: 100%; }
+body, h1, h2, h3, h4, h5, h6, p, article, aside, section, figure, footer, header, dl, dt, dd, ul, ol, li, th, td, form, fieldset, input, button, textarea, em { margin:0; padding:0; }
+body { position: relative; height:auto; min-height: 100%; }
+ol, ul { list-style: none outside none; }
+button, input[type="text"], input[type="button"], input[type="submit"], input[type="password"], input[type="email"], input[type="url"] { border:0 none; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box; }
+input, textarea, select { -webkit-outline:none; font-family:arial; }
+input:focus, textarea:focus { outline:none; }
+fieldset, img { border:0 none; }
+img { vertical-align:middle; }
+table { border-collapse:collapse; border-spacing:0; width:100%; }
+button, input[type="button"], input[type="submit"] { cursor: pointer; }
+:-moz-placeholder { color: #D2D0D0; }

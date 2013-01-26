@@ -1,0 +1,13 @@
+@charset "utf-8";
+body { background: #EDE7DB; height: 100%; }
+h1 { font-family: 'Fruktur', cursive; color: #C55F6B; }
+header, footer { text-align: center; }
+
+#floater { height: 50%; float: left; margin-bottom: -170px; }
+#content { padding-bottom: 4%; clear: both; text-align: center; }
+#content h1 { font-size: 3em; }
+#content div { text-align: center; }
+#sketch { border: 5px solid #FFFFFF; }
+
+footer { height: 8%; width: 100%; position: absolute; bottom: 0; }
+footer h1 { opacity: 0.4; }
