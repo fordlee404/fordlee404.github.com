@@ -1,0 +1,12 @@
+html,body { height: 100%; }
+h1,h2,h3,h4,h5,h6 { margin:0; }
+body { position: relative; }
+.iMusic { position: relative; height: 100%; height: 100%; }
+.music_info { background-color:#FFFFFF; width: 100%; height: 10em; opacity: 0.35; position:relative; top: 75%; padding: 0 5em; }
+.music_info h1, .music_info h2 { line-height: 2em; }
+#music_picture { display: block; position: absolute; top:0; left:0; z-index: -1; width: 100%; height: 100%; }
+
+.control_group { display: block; position: absolute; top: 75%; width: 100%; text-align: center; }
+.control_group .btn-group { opacity:0; transition: all 1s ease; }
+.control_group .btn-group:hover { opacity:1; }
+.control_group .btn { width: 10em; height: 10em; }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iMusicPlayer</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+    <article class="iMusic">
+        <hgroup class="music_info">
+            <h1 id="music_name"></h1>
+            <h3 id="music_player"></h2>
+        </hgroup>
+        <img id="music_picture" src="assets/img/bg.jpg" alt="" />
+        <audio id="music_data" src="" autoplay preload="auto"></audio>
+    </article>
+    <aside class="control_group">
+        <div class="btn-group">
+            <button id="control-backward" class="btn" title="上一首"><i class="icon-backward"></i></button>
+            <button id="control-upload" class="btn" title="选择歌曲"><i class="icon-upload"></i></button>
+            <button id="control-pause" class="btn" style="display:none;"><i class="icon-pause"></i></button>
+            <button id="control-play" class="btn"><i class="icon-play"></i></button>
+            <button id="control-forward" class="btn" title="下一首"><i class="icon-forward"></i></button>
+        </div>
+        <input type="file" id="upload_music" accept="audio/*" style="display:none;" multiple="multiple" />
+    </aside>
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>
