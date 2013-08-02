@@ -28,7 +28,7 @@ createNotify = (music_name)->
   if window.Notification.permission is 'default'
     window.Notification.requestPermission ->
       # callback this function once a permission level has been set
-      createNotify()
+      createNotify music_name
   # if the user has granted permission for this domain to send notification
   else if window.Notification.permission is 'granted'
     notify = new Notification music_name,{
@@ -70,15 +70,22 @@ playMusic = (music)->
   # 显示暂停按钮
   $pauseBtn.show()
 
+# 更新播放列表
+updateMusicList = (files)->
+  # 标识本次上传的文件是否已经开始播放
+  playFlag = false
+  for music in files
+    if /^audio\//.test music.type
+      # 当没有音乐正在播放时，开始播放刚刚上传的音乐
+      if !$player.get(0).currentTime && !playFlag
+        currentTag = musicList.length
+        playMusic music
+        playFlag = true
+      musicList.push music
 
 # 上传音乐
 $fileInput.bind 'change',->
-  # 当没有音乐正在播放时，开始播放刚刚上传的音乐
-  if !$player.get(0).currentTime
-    currentTag = musicList.length
-    playMusic this.files[0]
-  # 将新上传的音乐添加进列表
-  musicList.push music for music in this.files
+  updateMusicList this.files
 
 # 操作：上传
 $uploadBtn.bind 'click',->
@@ -114,3 +121,13 @@ $preBtn.bind 'click',->
 $nextBtn.bind 'click',->
   if currentTag is musicList.length-1 then currentTag=0 else currentTag++
   playMusic musicList[currentTag]
+
+# 拖拽上传
+window.document.ondragover = (e)->
+  e.preventDefault()
+
+window.document.body.addEventListener 'drop',(e)->
+  e.preventDefault()
+  _files = e.dataTransfer.files
+  updateMusicList _files
+,false
