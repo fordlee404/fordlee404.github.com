@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Window Navigator</title>
+<style type="text/css">
+table { text-align: left; }
+.navigator_key { color: #751F82; }
+.navigator_value { color: #AA1E1E; }
+</style>
+</head>
+<body>
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody id="test_navigator"></tbody>
+</table>
+<script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+<script>
+  (function(){
+    var $box= $('#test_navigator'),
+        $dataList= $(this.document.createDocumentFragment());
+
+    for(var key in window.navigator){
+      if(window.navigator.hasOwnProperty(key)){
+        $dataList.append('<tr><td class="navigator_key">'+key+'</td><td class="navigator_value">"'+window.navigator[key]+'"</td></tr>');
+      }
+    }
+
+    $box.append($dataList);
+  }).call(this);
+</script>
+</body>
+</html>
